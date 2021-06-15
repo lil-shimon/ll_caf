@@ -10,5 +10,6 @@ func main() {
 
     // Routes
     e.POST("/", handler.CreateType)
+    e.GET("/tasks", handler.GetType)
     e.Logger.Fatal(e.Start(":1323"))
 }
