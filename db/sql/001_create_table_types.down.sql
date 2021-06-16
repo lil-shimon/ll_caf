@@ -1,2 +1,2 @@
 DROP TABLE IF EXISTS
-workManager.types;
+    workManager.types;

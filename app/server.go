@@ -1,11 +1,9 @@
 package main
 
 import (
-	//"fmt"
 	"github.com/labstack/echo"
 	"github.com/lil-shimon/workManager/database"
 	"github.com/lil-shimon/workManager/handler"
-	"net/http"
 )
 
 func main() {
@@ -16,7 +14,8 @@ func main() {
 	defer sqlDb.Close()
 
 	// Routes
-	e.POST("/task", handler.CreateType)
-	e.GET("/tasks", handler.GetType)
+	e.POST("/category", handler.CreateCategory)
+	e.GET("/categories", handler.GetCategories)
+	e.GET("/category/:id", handler.ShowCategory)
 	e.Logger.Fatal(e.Start(":1323"))
 }
