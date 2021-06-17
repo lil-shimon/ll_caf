@@ -1,6 +1,8 @@
 #!/bin/bash
 
-DIR="~/project/workManager/"
+#DIR="~/project/workManager/"
+
+DIR="${HOME}/Users/shimozawakenta/project/workManager/"
 new="app/commit.go"
 
 echo "" >> $DIR$new
