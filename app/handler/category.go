@@ -36,3 +36,12 @@ func UpdateCategory(c echo.Context) error {
 	database.DB.Save(&cat)
 	return c.JSON(http.StatusOK, cat)
 }
+
+func DeleteCategory(c echo.Context) error {
+	cat := model.Category{}
+	if err := c.Bind(&cat); err != nil {
+		return err
+	}
+	database.DB.Delete(&cat)
+	return c.JSON(http.StatusNoContent, cat)
+}

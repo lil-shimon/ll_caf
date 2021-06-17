@@ -18,5 +18,6 @@ func main() {
 	e.GET("/categories", handler.GetCategories)
 	e.GET("/category/:id", handler.ShowCategory)
 	e.PUT("/category/:id", handler.UpdateCategory)
+	e.DELETE("/category/:id", handler.DeleteCategory)
 	e.Logger.Fatal(e.Start(":1323"))
 }
