@@ -17,5 +17,6 @@ func main() {
 	e.POST("/category", handler.CreateCategory)
 	e.GET("/categories", handler.GetCategories)
 	e.GET("/category/:id", handler.ShowCategory)
+	e.PUT("/category/:id", handler.UpdateCategory)
 	e.Logger.Fatal(e.Start(":1323"))
 }

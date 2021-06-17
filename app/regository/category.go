@@ -28,3 +28,14 @@ func ShowRepoCategory(id string) (model.Category, error) {
 	}
 	return cat, nil
 }
+
+func UpdateRepoCategory(id string) (model.Category, error) {
+	cat, _ := ShowRepoCategory(id)
+	req := model.Category{}
+	cat = req
+
+	if err := database.DB.Save(&cat).Error; err != nil {
+		return cat, err
+	}
+	return cat, nil
+}

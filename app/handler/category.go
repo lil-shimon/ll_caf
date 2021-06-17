@@ -27,3 +27,12 @@ func ShowCategory(c echo.Context) error {
 	category, _ := regository.ShowRepoCategory(string(id))
 	return c.JSON(http.StatusOK, category)
 }
+
+func UpdateCategory(c echo.Context) error {
+	cat := model.Category{}
+	if err := c.Bind(&cat); err != nil {
+		return err
+	}
+	database.DB.Save(&cat)
+	return c.JSON(http.StatusOK, cat)
+}
