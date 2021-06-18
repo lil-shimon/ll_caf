@@ -37,7 +37,7 @@ func ShowTask(c echo.Context) error {
 // repository.UpdateRepoTask
 ///**
 func UpdateTask(c echo.Context) error {
-	t := model.Category{}
+	t := model.Task{}
 	if err := c.Bind(&t); err != nil {
 		return err
 	}
