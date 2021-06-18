@@ -1,5 +1,5 @@
 CREATE TABLE IF NOT EXISTS
-workManager.categories(
+workManager.tasks(
     id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
     name VARCHAR(255) NOT NULL,
     category_id BIGINT UNSIGNED NOT NULL,
