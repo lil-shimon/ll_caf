@@ -1,4 +1,4 @@
-package regository
+package repository
 
 import (
 	"github.com/lil-shimon/workManager/database"

@@ -1,11 +1,11 @@
-package regository
+package repository
 
 import (
 	"github.com/lil-shimon/workManager/database"
 	"github.com/lil-shimon/workManager/model"
 )
 
-func GetRepoTask() (model.Tasks, error) {
+func GetRepoTasks() (model.Tasks, error) {
 	t := model.Tasks{}
 
 	if err := database.DB.Find(&t).Error; err != nil {
