@@ -41,6 +41,6 @@ func UpdateTask(c echo.Context) error {
 	if err := c.Bind(&t); err != nil {
 		return err
 	}
-	t = repository.UpdateRepoTask(t)
-	return
+	t, _ = repository.UpdateRepoTask(t)
+	return c.JSON(http.StatusOK, t)
 }
