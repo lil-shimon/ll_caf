@@ -30,9 +30,16 @@ func ShowTask(c echo.Context) error {
 	return c.JSON(http.StatusOK, t)
 }
 
+// UpdateTask
+// param c echo.Context
+// return t model.Task
+//
+// repository.UpdateRepoTask
+///**
 func UpdateTask(c echo.Context) error {
 	t := model.Category{}
 	if err := c.Bind(&t); err != nil {
 		return err
 	}
+	repository.UpdateRepoCategory(&t)
 }
