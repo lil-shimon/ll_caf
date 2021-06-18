@@ -15,5 +15,9 @@ func GetRepoTasks() (model.Tasks, error) {
 }
 
 func ShowRepoTask(id string) (model.Task, error) {
+	t := model.Task{}
 
+	if err := database.DB.Where("id = ?", id).First(&t).Error; err != nil {
+		return t, err
+	}
 }
