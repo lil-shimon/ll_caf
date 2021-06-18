@@ -13,3 +13,7 @@ func GetRepoTasks() (model.Tasks, error) {
 	}
 	return t, nil
 }
+
+func ShowRepoTask(id string) (model.Task, error) {
+
+}
