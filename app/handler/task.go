@@ -10,6 +10,8 @@ import (
 // GetTasks
 // param c [echo.Context]
 // return json [model.Tasks], error
+//
+// repository.GetRepoTasks
 ///**
 func GetTasks(c echo.Context) error {
 	t, _ := repository.GetRepoTasks()
