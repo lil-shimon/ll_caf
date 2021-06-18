@@ -2,6 +2,7 @@ package handler
 
 import (
 	"github.com/labstack/echo"
+	"github.com/lil-shimon/workManager/database"
 	"github.com/lil-shimon/workManager/model"
 	"github.com/lil-shimon/workManager/repository"
 	"net/http"
@@ -43,4 +44,13 @@ func UpdateTask(c echo.Context) error {
 	}
 	t, _ = repository.UpdateRepoTask(t)
 	return c.JSON(http.StatusOK, t)
+}
+
+func deleteTask(c echo.Context) error {
+	t := model.Task{}
+	if err := c.Bind(&t); err != nil {
+		return err
+	}
+	database.DB.Delete(&t)
+	return c.JSON(http.StatusNoContent, t)
 }
