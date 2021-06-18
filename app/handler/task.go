@@ -46,7 +46,7 @@ func UpdateTask(c echo.Context) error {
 	return c.JSON(http.StatusOK, t)
 }
 
-func deleteTask(c echo.Context) error {
+func DeleteTask(c echo.Context) error {
 	t := model.Task{}
 	if err := c.Bind(&t); err != nil {
 		return err
