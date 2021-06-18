@@ -41,5 +41,6 @@ func UpdateTask(c echo.Context) error {
 	if err := c.Bind(&t); err != nil {
 		return err
 	}
-	repository.UpdateRepoCategory(&t)
+	t, _ = repository.UpdateRepoCategory(&t)
+	return
 }
