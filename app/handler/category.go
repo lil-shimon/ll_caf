@@ -23,7 +23,7 @@ func GetCategories(c echo.Context) error {
 }
 
 func ShowCategory(c echo.Context) error {
-	id := c.Param("id")
+	id := c.Param("id)
 	category, _ := regository.ShowRepoCategory(string(id))
 	return c.JSON(http.StatusOK, category)
 }
