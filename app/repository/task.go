@@ -19,6 +19,12 @@ func GetRepoTasks() (model.Tasks, error) {
 	return t, nil
 }
 
+// ShowRepoTask
+// param id string
+// return [type] Task, error
+//
+// handler.ShowTask
+///**
 func ShowRepoTask(id string) (model.Task, error) {
 	t := model.Task{}
 
