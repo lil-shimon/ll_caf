@@ -29,3 +29,10 @@ func ShowTask(c echo.Context) error {
 	t, _ := repository.ShowRepoCategory(string(id))
 	return c.JSON(http.StatusOK, t)
 }
+
+func UpdateTask(c echo.Context) error {
+	t := model.Category{}
+	if err := c.Bind(&t); err != nil {
+		return err
+	}
+}

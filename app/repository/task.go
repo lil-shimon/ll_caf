@@ -33,3 +33,10 @@ func ShowRepoTask(id string) (model.Task, error) {
 	}
 	return t, nil
 }
+
+func UpdateRepoTask(t model.Task) (model.Task, error) {
+	if err := database.DB.Save(&t).Error; err != nil {
+		return t, err
+	}
+	return t, nil
+}
