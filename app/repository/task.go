@@ -5,6 +5,11 @@ import (
 	"github.com/lil-shimon/workManager/model"
 )
 
+// GetRepoTasks
+// return [type] Tasks, error
+//
+// handler.GetTasks
+///**
 func GetRepoTasks() (model.Tasks, error) {
 	t := model.Tasks{}
 
