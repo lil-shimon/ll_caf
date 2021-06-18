@@ -20,4 +20,5 @@ func ShowRepoTask(id string) (model.Task, error) {
 	if err := database.DB.Where("id = ?", id).First(&t).Error; err != nil {
 		return t, err
 	}
+	return t, nil
 }
