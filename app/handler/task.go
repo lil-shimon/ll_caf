@@ -12,4 +12,8 @@ func GetTasks(c echo.Context) error {
 	return c.JSON(http.StatusOK, t)
 }
 
-func ShowTask()
+func ShowTask(c echo.Context) error {
+	id := c.Param("id")
+	t, _ := repository.ShowRepoCategory(string(id))
+	return c.JSON(http.StatusOK, t)
+}
