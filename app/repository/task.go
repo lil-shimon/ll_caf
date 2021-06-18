@@ -21,7 +21,7 @@ func GetRepoTasks() (model.Tasks, error) {
 
 // ShowRepoTask
 // param id string
-// return [type] Task, error
+// return t model.Task, error Error
 //
 // handler.ShowTask
 ///**
@@ -34,6 +34,12 @@ func ShowRepoTask(id string) (model.Task, error) {
 	return t, nil
 }
 
+// UpdateRepoTask
+// param t model.Task
+// return t model.Task, error Error
+//
+// handler.UpdateTask
+///**
 func UpdateRepoTask(t model.Task) (model.Task, error) {
 	if err := database.DB.Save(&t).Error; err != nil {
 		return t, err
