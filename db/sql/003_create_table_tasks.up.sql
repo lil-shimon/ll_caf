@@ -8,5 +8,5 @@ workManager.tasks(
     updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     deleted_at DATETIME DEFAULT NULL,
     PRIMARY KEY(id),
-    FOREIGN KEY category_id_foreign (category_id) REFERENCES categories (id)
+    FOREIGN tasks_category_id_foreign (category_id) REFERENCES categories (id)
 ) ENGINE=INNODB DEFAULT CHARSET=utf8mb4;
