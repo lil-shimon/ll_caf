@@ -7,6 +7,10 @@ import (
 	"net/http"
 )
 
+// GetTasks
+// param c [echo.Context]
+// return json [model.Tasks], error
+///**
 func GetTasks(c echo.Context) error {
 	t, _ := repository.GetRepoTasks()
 	return c.JSON(http.StatusOK, t)
@@ -15,6 +19,7 @@ func GetTasks(c echo.Context) error {
 // ShowTask
 // param c [echo.Context]
 // return json, error
+//
 // repository.ShowRepoTask
 ///**
 func ShowTask(c echo.Context) error {
