@@ -3,6 +3,9 @@ package handler
 import (
 	"context"
 	"fmt"
+	"github.com/labstack/echo"
+	"github.com/lil-shimon/workManager/repository"
+	"image"
 	"log"
 	"os"
 
@@ -12,9 +15,23 @@ import (
 // FileReader
 //
 ///**
-func FileReader() {
-	path := os.Args[1]
+func FileReader(c echo.Context) (image.Image, error) {
+	// first things first, check the data of upload file
+	file, err := c.FormFile("file")
+	if err != nil {
+		return file, err
+	}
+	fileData := repository.GetImageData(file)
+	// then upload to s3
+
+	// get the path of uploaded file
+	path := os.Args[0]
+
+	// get text data by file path
 	Ocr(path)
+
+	// return text data from upload file
+	return fileData, nil
 }
 
 // Ocr
