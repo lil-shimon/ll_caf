@@ -38,7 +38,7 @@ func FileReader(c echo.Context) (image.Image, error) {
 // param path string
 // return read text
 ///**
-func Ocr(path string) {
+func Ocr(path string){
 	// create context
 	ctx := context.Background()
 
