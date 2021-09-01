@@ -20,8 +20,11 @@ func main() {
 	e.DELETE("/category/:id", handler.DeleteCategory)
 	e.GET("/tasks", handler.GetTasks)
 	e.GET("/task/:id", handler.ShowTask)
-	//e.POST("/task", handler.CreateTask)
 	e.PUT("/task/:id", handler.UpdateTask)
 	e.DELETE("/task/:id", handler.DeleteTask)
+  e.GET("/types", handler.GetTypes)
+  e.GET("/type/:id", handler.ShowType)
+  e.POST("/type", handler.StoreType)
+  e.PUT("/type/:id", handler.UpdateType)
 	e.Logger.Fatal(e.Start(":1323"))
 }
