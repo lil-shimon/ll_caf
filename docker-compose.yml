@@ -4,7 +4,7 @@ services:
   app:
     build:
       context: .
-      dockerfile: app/Dockerfile #Dockerfileの場所
+      dockerfile: app/Dockerfile
     volumes:
       - ./app:/go/src/app
     ports:
