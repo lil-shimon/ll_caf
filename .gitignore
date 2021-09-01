@@ -3,3 +3,4 @@
 .env
 /commit.sh
 /commit.go
+/app/tmp/runner-build
