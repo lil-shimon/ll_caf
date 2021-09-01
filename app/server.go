@@ -23,6 +23,5 @@ func main() {
 	//e.POST("/task", handler.CreateTask)
 	e.PUT("/task/:id", handler.UpdateTask)
 	e.DELETE("/task/:id", handler.DeleteTask)
-	e.POST("/ocr/read", handler.FileReader)
 	e.Logger.Fatal(e.Start(":1323"))
 }
