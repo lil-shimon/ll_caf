@@ -10,4 +10,4 @@ type Item struct {
   TypeId int `json:"typeId" gorm:"not null"`
 }
 
-type Items []Item
+type Items []*Item

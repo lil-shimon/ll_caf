@@ -26,5 +26,6 @@ func main() {
   e.GET("/type/:id", handler.ShowType)
   e.POST("/type", handler.StoreType)
   e.PUT("/type/:id", handler.UpdateType)
+  e.GET("/items", handler.GetItems)
 	e.Logger.Fatal(e.Start(":1323"))
 }
