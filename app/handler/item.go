@@ -19,3 +19,9 @@ func StoreItem(c echo.Context) error {
   ni, _ := service.StoreItem(*i)
   return c.JSON(http.StatusOK, ni)
 }
+
+func ShowItem(c echo.Context) error {
+  id := c.Param("id")
+  i, _ := service.ShowItem(id)
+  return c.JSON(http.StatusOK, i)
+}

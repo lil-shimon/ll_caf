@@ -19,3 +19,9 @@ func StoreItem(t model.Item) (model.Item, error) {
   i, _ := repository.StoreItem(t)
   return i, nil
 }
+
+func ShowItem(id string) (model.Item, error) {
+  i, _ := repository.ShowItem(id)
+  i.Type, _ = repository.ShowType(strconv.Itoa(i.TypeId))
+  return i, nil
+}

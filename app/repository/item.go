@@ -23,3 +23,10 @@ func StoreItem(i model.Item) (model.Item, error) {
   return i, nil
 }
 
+func ShowItem(id string) (model.Item, error) {
+  i := model.Item{}
+  if err := database.DB.Where("id = ?", id).First(&i).Error; err != nil {
+    return i, err
+  }
+  return i, nil
+}
