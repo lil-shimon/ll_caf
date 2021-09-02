@@ -30,5 +30,9 @@ func main() {
   e.GET("/item/:id", handler.ShowItem)
   e.POST("/item", handler.StoreItem)
   e.PUT("/item/:id", handler.UpdateItem)
+  e.GET("/logs", handler.GetLogs)
+  e.GET("/log/:id", handler.GetLog)
+  e.POST("/log", handler.StoreLog)
+  e.PUT("/log/:id", handler.UpdateLog)
 	e.Logger.Fatal(e.Start(":1323"))
 }
