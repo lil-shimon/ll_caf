@@ -13,3 +13,13 @@ func GetItems() (model.Items, error) {
   }
   return i, nil
 }
+
+func StoreItem(i model.Item) (model.Item, error) {
+
+  if err := database.DB.Create(&i).Error; err != nil {
+    return i, err
+  }
+
+  return i, nil
+}
+

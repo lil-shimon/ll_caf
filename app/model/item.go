@@ -7,7 +7,8 @@ type Item struct {
   Name string `json:"name"`
   Amount int `json:"amount" gorm:"default:0"`
   Contain int `json:"contain" gorm:"default:0"`
-  TypeId int `json:"typeId" gorm:"not null"`
+  TypeId int `json:"type_id"`
+  Type Type
 }
 
 type Items []*Item
