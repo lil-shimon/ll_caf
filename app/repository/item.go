@@ -30,3 +30,10 @@ func ShowItem(id string) (model.Item, error) {
   }
   return i, nil
 }
+
+func UpdateItem(i model.Item) (model.Item, error) {
+  if err := database.DB.Save(&i).Error; err != nil {
+    return i, err
+  }
+  return i, nil
+}

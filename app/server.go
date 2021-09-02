@@ -29,5 +29,6 @@ func main() {
   e.GET("/items", handler.GetItems)
   e.GET("/item/:id", handler.ShowItem)
   e.POST("/item", handler.StoreItem)
+  e.PUT("/item/:id", handler.UpdateItem)
 	e.Logger.Fatal(e.Start(":1323"))
 }

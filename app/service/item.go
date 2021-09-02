@@ -25,3 +25,8 @@ func ShowItem(id string) (model.Item, error) {
   i.Type, _ = repository.ShowType(strconv.Itoa(i.TypeId))
   return i, nil
 }
+
+func UpdateItem(i model.Item) (model.Item, error) {
+  i, _ = repository.UpdateItem(i)
+  return i, nil
+}

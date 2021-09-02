@@ -25,3 +25,10 @@ func ShowItem(c echo.Context) error {
   i, _ := service.ShowItem(id)
   return c.JSON(http.StatusOK, i)
 }
+
+func UpdateItem(c echo.Context) error {
+  i, _ := service.ShowItem(c.Param("id"))
+  c.Bind(&i)
+  i, _ = service.UpdateItem(i)
+  return c.JSON(http.StatusOK, i)
+}
