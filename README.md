@@ -1,10 +1,10 @@
-# workManager
+### cf server side
 
-・ Golang
-・ Gorm
-・ Echo
-・ Docker
-・ MySQL
-・ phpmyadmin
-・ golang-migrate
+- Golang
+- Gorm
+- Echo
+- Docker
+- MySQL
+- phpmyadmin
+- golang-migrate
 
