@@ -35,3 +35,11 @@ func UpdateLog(l model.Log) (model.Log, error) {
   }
   return l, nil
 }
+
+func GetLogsByItemId(itemId string) (model.Logs, error) {
+  ls := model.Logs{}
+  if err := database.DB.Where("item_id = ?", itemId).Find(&ls).Error; err != nil {
+    return ls, err
+  }
+  return ls, nil
+}

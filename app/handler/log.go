@@ -31,3 +31,8 @@ func UpdateLog(c echo.Context) error {
   l, _ := service.UpdateLog(c)
   return c.JSON(http.StatusOK, l)
 }
+
+func GetLogsByItemId(c echo.Context) error {
+  ls, _ := service.GetLogsByItemId(c.Param("id"))
+  return c.JSON(http.StatusOK, ls)
+}

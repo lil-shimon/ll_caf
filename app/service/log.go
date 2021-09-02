@@ -27,9 +27,17 @@ func StoreLog (l model.Log) (model.Log, error) {
   return l, nil
 }
 
-func UpdateLog ( c echo.Context) (model.Log, error) {
+func UpdateLog (c echo.Context) (model.Log, error) {
   l, _ := repository.GetLog(c.Param("id"))
   c.Bind(&l)
   l, _ = repository.UpdateLog(l)
   return l, nil
+}
+
+func GetLogsByItemId (itemId string) (model.Logs, error) {
+  ls, _ := repository.GetLogsByItemId(itemId)
+  for _, l := range ls {
+    l.Item, _ = repository.ShowItem(itemId)
+  }
+  return ls, nil
 }
