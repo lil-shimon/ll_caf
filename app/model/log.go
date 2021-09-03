@@ -8,6 +8,8 @@ type Log struct {
   Item Item
 }
 
+type Logs []*Log
+
 // daily log
 // Items 
 // TAmount Total Amount
@@ -17,14 +19,13 @@ type Log struct {
 // CARate Compared Amount Rate
 // CCRate Compared Contain Rate
 type DayLog struct {
+  Logs Logs
   Items Items
-  TAmount int
-  TContain int
-  CAmount int
-  CContain int
-  CARate int
-  CCRate int
+  // TAmount int
+  // TContain int
+  // CAmount int
+  // CContain int
+  // CARate int
+  // CCRate int
 }
-
-type Logs []*Log
 

@@ -42,13 +42,15 @@ func GetLogsByItemId (itemId string) (model.Logs, error) {
   return ls, nil
 }
 
-func GetDailyLog () (model.Logs, error) {
-  ls, err := repository.GetDailyLog()
-  for _, l := range ls {
-    l.Item, err = repository.ShowItem(strconv.Itoa(l.ItemId))
-    if err != nil {
-      panic("error")
-    }
+func GetDailyLog () (model.DayLog, error) {
+  dls := model.DayLog{}
+  dls.Logs, _ = repository.GetDailyLog()
+  var itemIds []string
+  for _, l := range dls.Logs {
+    itemIds = append(itemIds, strconv.Itoa(l.ItemId))
+    l.Item, _ = repository.ShowItem(strconv.Itoa(l.ItemId))
   }
-  return ls, err
+  dls.Items, _ = repository.GetItemByIds(itemIds)
+  return dls, nil
 }
+

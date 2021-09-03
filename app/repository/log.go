@@ -1,8 +1,6 @@
 package repository
 
 import (
-	"log"
-
 	"github.com/lil-shimon/workManager/database"
 	"github.com/lil-shimon/workManager/model"
 	"github.com/lil-shimon/workManager/util"
