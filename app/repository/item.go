@@ -45,3 +45,11 @@ func GetItemByIds (ids []string) (model.Items, error) {
   }
   return is, nil
 }
+
+func GetItemsTypeId (tid string) (model.Items, error) {
+  is := model.Items{}
+  if err := database.DB.Where("type_id = ?", tid).Find(&is).Error; err != nil {
+    return is, err
+  }
+  return is, nil
+}

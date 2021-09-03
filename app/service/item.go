@@ -30,3 +30,12 @@ func UpdateItem(i model.Item) (model.Item, error) {
   i, _ = repository.UpdateItem(i)
   return i, nil
 }
+
+func GetItemsByTypeId(tid string) (model.Items, error) {
+  is, err := repository.GetItemsTypeId(tid)
+  if err != nil {
+    return is, err
+  }
+  return is, nil
+}
+

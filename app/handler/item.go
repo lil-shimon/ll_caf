@@ -32,3 +32,11 @@ func UpdateItem(c echo.Context) error {
   i, _ = service.UpdateItem(i)
   return c.JSON(http.StatusOK, i)
 }
+
+func GetItemsTypeId(c echo.Context) error {
+  is, err := service.GetItemsByTypeId(c.Param("id"))
+  if err != nil {
+    return c.JSON(http.StatusBadRequest, err)
+  }
+  return c.JSON(http.StatusOK, is)
+}

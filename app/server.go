@@ -33,6 +33,7 @@ func main() {
   e.GET("/item/:id", handler.ShowItem)
   e.POST("/item", handler.StoreItem)
   e.PUT("/item/:id", handler.UpdateItem)
+  e.GET("/item/type/:id", handler.GetItemsTypeId)
   e.GET("/logs", handler.GetLogs)
   e.GET("/log/:id", handler.GetLog)
   e.POST("/log", handler.StoreLog)
