@@ -51,6 +51,10 @@ func GetDailyLog () (model.DayLog, error) {
     l.Item, _ = repository.ShowItem(strconv.Itoa(l.ItemId))
   }
   dls.Items, _ = repository.GetItemByIds(itemIds)
+  for _, dl := range dls.Items {
+    dls.TAmount += dl.Amount
+    dls.TContain += dl.Contain
+  }
   return dls, nil
 }
 

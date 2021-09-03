@@ -21,8 +21,8 @@ type Logs []*Log
 type DayLog struct {
   Logs Logs
   Items Items
-  // TAmount int
-  // TContain int
+  TAmount int
+  TContain int
   // CAmount int
   // CContain int
   // CARate int
