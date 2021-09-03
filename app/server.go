@@ -4,6 +4,7 @@ import (
 	"github.com/labstack/echo"
 	"github.com/lil-shimon/workManager/database"
 	"github.com/lil-shimon/workManager/handler"
+	"github.com/lil-shimon/workManager/middleware"
 )
 
 func main() {
@@ -11,6 +12,8 @@ func main() {
 	database.Connect()
 	sqlDb, _ := database.DB.DB()
 	defer sqlDb.Close()
+
+  e.Use(middleware.LogMiddleware)
 
 	// Routes
 	e.POST("/category", handler.CreateCategory)
@@ -35,5 +38,7 @@ func main() {
   e.POST("/log", handler.StoreLog)
   e.PUT("/log/:id", handler.UpdateLog)
   e.GET("/log/item/:id", handler.GetLogsByItemId)
-	e.Logger.Fatal(e.Start(":1323"))
+  e.GET("log/daily", handler.GetDailyLog)
+
+  e.Logger.Fatal(e.Start(":1323"))
 }

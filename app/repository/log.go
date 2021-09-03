@@ -1,6 +1,8 @@
 package repository
 
 import (
+	"time"
+
 	"github.com/lil-shimon/workManager/database"
 	"github.com/lil-shimon/workManager/model"
 )
@@ -41,5 +43,15 @@ func GetLogsByItemId(itemId string) (model.Logs, error) {
   if err := database.DB.Where("item_id = ?", itemId).Find(&ls).Error; err != nil {
     return ls, err
   }
+  return ls, nil
+}
+
+func GetDailyLog() (model.Logs, error) {
+  ls := model.Logs{}
+  td := time.Now()
+  if err := database.DB.Where("created_at = ?", td).Find(&ls).Error; err != nil {
+    return ls, err
+  }
+
   return ls, nil
 }

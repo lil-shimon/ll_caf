@@ -41,3 +41,14 @@ func GetLogsByItemId (itemId string) (model.Logs, error) {
   }
   return ls, nil
 }
+
+func GetDailyLog () (model.Logs, error) {
+  ls, err := repository.GetDailyLog()
+  for _, l := range ls {
+    l.Item, err = repository.ShowItem(strconv.Itoa(l.ItemId))
+    if err != nil {
+      panic("error")
+    }
+  }
+  return ls, err
+}

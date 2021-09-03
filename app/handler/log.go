@@ -36,3 +36,11 @@ func GetLogsByItemId(c echo.Context) error {
   ls, _ := service.GetLogsByItemId(c.Param("id"))
   return c.JSON(http.StatusOK, ls)
 }
+
+func GetDailyLog(c echo.Context) error {
+  ls, err := service.GetDailyLog()
+  if err != nil {
+    return c.JSON(http.StatusBadRequest, err.Error)
+  }
+  return c.JSON(http.StatusOK, ls)
+}
