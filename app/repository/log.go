@@ -1,10 +1,11 @@
 package repository
 
 import (
-	"time"
+	"log"
 
 	"github.com/lil-shimon/workManager/database"
 	"github.com/lil-shimon/workManager/model"
+	"github.com/lil-shimon/workManager/util"
 )
 
 func GetLogs() (model.Logs, error) {
@@ -48,8 +49,8 @@ func GetLogsByItemId(itemId string) (model.Logs, error) {
 
 func GetDailyLog() (model.Logs, error) {
   ls := model.Logs{}
-  td := time.Now()
-  if err := database.DB.Where("created_at = ?", td).Find(&ls).Error; err != nil {
+  td, tml := util.GetDaily()
+  if err := database.DB.Where("created_at BETWEEN ? AND ?", td, tml).Find(&ls).Error; err != nil {
     return ls, err
   }
 
