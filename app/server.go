@@ -44,6 +44,8 @@ func main() {
 	e.GET("/log/item/:id", handler.GetLogsByItemId)
 	e.GET("/log/daily", handler.GetDailyLog)
 	e.GET("/log/type/:id", handler.GetLogByType)
+	e.GET("/user/:id", handler.GetUser)
+	e.POST("/user", handler.StoreUser)
 
 	e.Logger.Fatal(e.Start(":1323"))
 }
