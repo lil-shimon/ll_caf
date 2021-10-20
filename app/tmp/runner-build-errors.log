@@ -1,0 +1,2 @@
+# github.com/lil-shimon/workManager/service
+service/post.go:14:45: cannot use p.Model.ID (type uint) as type string in argument to repository.GetLikesByPostId
