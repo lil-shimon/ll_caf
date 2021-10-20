@@ -8,3 +8,5 @@ type Like struct {
 	PostId    int       `json:"post_id"`
 	CreatedAt time.Time `json:"created_at"`
 }
+
+type Likes []*Like
